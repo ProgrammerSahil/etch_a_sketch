@@ -1,0 +1,19 @@
+*, body{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    display: flex;
+}
+
+.container .column{
+    display: felx;
+    flex-direction: column;
+}
+
+.column .row{
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    margin:5px 5px;
+}
