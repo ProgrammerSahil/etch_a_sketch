@@ -9,16 +9,20 @@ function createGrid(size){
             let rowContainer = document.querySelector('.container').lastChild;
             let row = document.createElement("div");
             row.classList.add('row');
+            row.id = "box";
             rowContainer.appendChild(row);
         }
     }
+
 }
 
-
 window.onload = function(){
-
     createGrid(32);
 
+    [...document.querySelectorAll('.row')].forEach(function(item){
+        item.addEventListener('mouseover', function(e){
+            item.style.backgroundColor = "red";
+        });
+    });
 
-    
 }
