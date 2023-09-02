@@ -16,6 +16,14 @@ function createGrid(size){
 
 }
 
+function reset(size){
+    [...document.querySelectorAll('.column')].forEach(function(item){
+        item.remove();
+    });
+
+    createGrid(size);
+}
+
 window.onload = function(){
     createGrid(32);
 
