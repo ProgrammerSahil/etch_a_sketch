@@ -16,21 +16,27 @@ function createGrid(size){
 
 }
 
-function reset(size){
+function reset(){
     [...document.querySelectorAll('.column')].forEach(function(item){
         item.remove();
     });
 
-    createGrid(size);
+    let slider_value = document.getElementById('main_slider').value;
+    createGrid(slider_value);
+    listen();
+
 }
 
-window.onload = function(){
-    createGrid(32);
-
+function listen(){
     [...document.querySelectorAll('.row')].forEach(function(item){
         item.addEventListener('mouseover', function(e){
             item.style.backgroundColor = "red";
         });
     });
+}
 
+window.onload = function(){
+    createGrid(16);
+    listen();
+    document.querySelector('.slider_apply').addEventListener('click', () => reset());
 }
