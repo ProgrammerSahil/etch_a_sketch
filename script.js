@@ -1,4 +1,4 @@
-function createGrid(size){
+const createGrid = (size) => {
     const container = document.querySelector('.container');
 
     for(let i = 0; i<size; i++){
@@ -16,8 +16,8 @@ function createGrid(size){
 
 }
 
-function reset(){
-    [...document.querySelectorAll('.column')].forEach(function(item){
+const reset = () => {
+    [...document.querySelectorAll('.column')].forEach((item) => {
         item.remove();
     });
 
@@ -27,15 +27,15 @@ function reset(){
 
 }
 
-function listen(){
-    [...document.querySelectorAll('.row')].forEach(function(item){
-        item.addEventListener('mouseover', function(e){
+const listen = () => {
+    [...document.querySelectorAll('.row')].forEach((item) => {
+        item.addEventListener('mouseover', (e) => {
             item.style.backgroundColor = "red";
         });
     });
 }
 
-window.onload = function(){
+window.onload = () => {
     createGrid(16);
     listen();
     document.querySelector('.slider_apply').addEventListener('click', () => reset());
